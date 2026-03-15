@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laser Mom Gifts — Premium Mother's Day Laser Cutting Designs</title>
+<meta name="description" content="1938 premium laser cutting designs for Mother's Day. SVG, DXF, AI, CDR formats. Instant download, commercial licence. Frames, boxes, keychains, floral and more.">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Laser Mom Gifts","description":"Premium Mother's Day laser cutting designs","url":"https://laserMomgifts.pages.dev"}</script>
+</head>
+<body>
+
+<div class="stitch" id="stitch"></div>
+
+<!-- SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+  <div class="modal-box">
+    <button class="m-close" onclick="closeSearch()">✕</button>
+    <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:1rem">Search designs…</p>
+    <input class="modal-search" id="search-input" type="text" placeholder="e.g. Rose frame, Nana box, Heart keychain…" autocomplete="off">
+    <div id="search-results" class="modal-results"></div>
+  </div>
+</div>
+
+<!-- WISHLIST DRAWER -->
+<div class="drawer-overlay" id="drawer-ov"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>My Wishlist 🤍</h3>
+    <button class="drawer-close" onclick="toggleDrawer()">✕</button>
+  </div>
+  <div class="drawer-items" id="drawer-items">
+    <div class="d-empty" id="drawer-empty">
+      <div style="font-size:2.5rem;margin-bottom:.75rem">🪵</div>
+      <p>Your wishlist is empty.<br>Heart any design to save it.</p>
+    </div>
+  </div>
+  <div class="drawer-foot" id="drawer-foot" style="display:none">
+    <p style="font-size:.82rem;color:var(--text-mid);margin-bottom:1rem">Ready to create? Download instantly and start cutting today.</p>
+    <a href="https://www.creativefabrica.com/search/ref/20531415/?query=mother&type=Laser+Cutting" target="_blank" rel="noopener" class="btn btn-wood" style="display:block;text-align:center">Browse All Designs ➜</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Laser Mom Gifts<span>Mother's Day Laser Designs</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="shop.html">Shop All 1938</a></li>
+    <li><a href="shop.html?cat=floral">Floral</a></li>
+    <li><a href="shop.html?cat=frame">Frames</a></li>
+    <li><a href="shop.html?cat=box">Gift Boxes</a></li>
+    <li><a href="gift-guide.html">Gift Guide</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn" onclick="openSearch()" title="Search">🔍</button>
+    <button class="nav-btn" onclick="toggleDrawer()" title="Wishlist">
+      🤍<span class="badge" id="wl-badge">0</span>
+    </button>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="toggleMobile()">🏠 Home</a>
+  <a href="shop.html" onclick="toggleMobile()">🛒 Shop All 1938 Designs</a>
+  <a href="shop.html?cat=floral" onclick="toggleMobile()">🌸 Floral Designs</a>
+  <a href="shop.html?cat=frame" onclick="toggleMobile()">🖼 Photo Frames</a>
+  <a href="shop.html?cat=box" onclick="toggleMobile()">📦 Gift Boxes</a>
+  <a href="shop.html?cat=decor" onclick="toggleMobile()">🏠 Wall Décor</a>
+  <a href="shop.html?cat=keychain" onclick="toggleMobile()">🔑 Keychains</a>
+  <a href="shop.html?cat=grandma" onclick="toggleMobile()">💛 For Grandmas</a>
+  <a href="gift-guide.html" onclick="toggleMobile()">🎁 Gift Guide</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-fallback"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/banner_laser.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="laser-line"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">✦ 1938 Laser Cutting Files · SVG · DXF · AI · CDR · Instant Download</span>
+    <h1 class="hero-title">Create a Timeless Gift<br>with <em>Laser Cutting</em></h1>
+    <p class="hero-sub">Premium designs for Mother's Day — carved in wood, etched in love.<br>Download instantly and start creating beautiful handmade gifts today.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="shop.html" class="btn btn-wood">Explore All 1938 Designs ➜</a>
+      <a href="gift-guide.html" class="btn btn-outline-light">Gift Ideas 🎁</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Discover<br>↓</div>
+</section>
+
+<!-- SHOP BY CATEGORY -->
+<section class="section-pad">
+  <div class="wrap">
+    <span class="sec-label rev">Browse by Category</span>
+    <h2 class="sec-title rev">Find the Perfect Design<br><em>for Her Gift</em></h2>
+    <p class="sec-sub rev">1938 laser cutting files across 10 categories — from floral frames to engraved keepsake boxes and personalised keychains.</p>
+    <div class="cat-grid">
+      <a href="shop.html" class="cat-pill rev del1"><span class="icon">✨</span>All Designs <strong style="margin-left:.3rem;font-size:.75rem;opacity:.65">1938</strong></a>
+      <a href="shop.html?cat=floral" class="cat-pill rev del1"><span class="icon">🌸</span>Floral</a>
+      <a href="shop.html?cat=frame" class="cat-pill rev del2"><span class="icon">🖼</span>Photo Frames</a>
+      <a href="shop.html?cat=box" class="cat-pill rev del2"><span class="icon">📦</span>Gift Boxes</a>
+      <a href="shop.html?cat=decor" class="cat-pill rev del3"><span class="icon">🏡</span>Wall Décor & Signs</a>
+      <a href="shop.html?cat=keychain" class="cat-pill rev del1"><span class="icon">🔑</span>Keychains & Tags</a>
+      <a href="shop.html?cat=coaster" class="cat-pill rev del2"><span class="icon">☕</span>Coasters & Trays</a>
+      <a href="shop.html?cat=grandma" class="cat-pill rev del2"><span class="icon">💛</span>For Grandmas</a>
+      <a href="shop.html?cat=funny" class="cat-pill rev del3"><span class="icon">😄</span>Funny & Relatable</a>
+      <a href="shop.html?cat=gift" class="cat-pill rev del3"><span class="icon">🎁</span>Gift Bundles</a>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS SECTION -->
+<section style="padding-bottom:4rem;position:relative;z-index:2">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem" class="rev">
+      <div style="background:rgba(196,149,106,.12);border:1px solid rgba(196,149,106,.25);border-radius:var(--r);padding:1.5rem;text-align:center">
+        <div style="font-size:2rem;margin-bottom:.6rem">🪵</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--dark);margin-bottom:.35rem">Wood & Plywood</div>
+        <div style="font-size:.82rem;color:var(--text-mid)">3mm–6mm birch, pine, MDF</div>
+      </div>
+      <div style="background:rgba(44,95,45,.08);border:1px solid rgba(44,95,45,.2);border-radius:var(--r);padding:1.5rem;text-align:center">
+        <div style="font-size:2rem;margin-bottom:.6rem">💎</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--dark);margin-bottom:.35rem">Acrylic & Perspex</div>
+        <div style="font-size:.82rem;color:var(--text-mid)">Clear, frosted, mirrored</div>
+      </div>
+      <div style="background:rgba(183,110,60,.1);border:1px solid rgba(183,110,60,.22);border-radius:var(--r);padding:1.5rem;text-align:center">
+        <div style="font-size:2rem;margin-bottom:.6rem">🤎</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--dark);margin-bottom:.35rem">Leather & Cork</div>
+        <div style="font-size:.82rem;color:var(--text-mid)">Vegetable-tanned, cork sheets</div>
+      </div>
+      <div style="background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.25);border-radius:var(--r);padding:1.5rem;text-align:center">
+        <div style="font-size:2rem;margin-bottom:.6rem">📄</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--dark);margin-bottom:.35rem">Cardstock & Paper</div>
+        <div style="font-size:.82rem;color:var(--text-mid)">300–400gsm card, kraft paper</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING CAROUSEL -->
+<section style="padding-bottom:4.5rem;position:relative;z-index:2">
+  <div class="wrap">
+    <span class="sec-label rev">Hot Right Now</span>
+    <h2 class="sec-title rev">Bestsellers — What Makers Are<br><em>Cutting Right Now</em></h2>
+    <div class="carousel-outer rev">
+      <div class="carousel" id="carousel"></div>
+      <div class="carousel-nav">
+        <button class="c-btn" onclick="scrollC(-1)">←</button>
+        <button class="c-btn" onclick="scrollC(1)">→</button>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.25rem" class="rev">
+      <a href="shop.html" class="btn btn-outline">View All 1938 Designs ➜</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section style="padding-bottom:4.5rem;position:relative;z-index:2">
+  <div class="wrap">
+    <div class="quote-block rev">
+      <p class="quote-text">"A gift made with fire and light,<br>for the one who gave you warmth."</p>
+      <p class="quote-credit">— The Art of Laser Gifting</p>
+      <p style="color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:2.25rem;line-height:1.75;position:relative;z-index:1">Every design in our collection is crafted to become a lasting keepsake. From engraved photo frames to personalised memory boxes — made by you, treasured by her.</p>
+      <a href="shop.html?cat=frame" class="btn btn-gold" style="position:relative;z-index:1">Browse Photo Frames ➜</a>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT FINDER QUIZ -->
+<section style="padding-bottom:4.5rem;position:relative;z-index:2">
+  <div class="wrap">
+    <span class="sec-label rev">2-Minute Gift Finder</span>
+    <h2 class="sec-title rev">Not Sure What to Cut?</h2>
+    <div class="quiz-box rev">
+      <div id="q-intro">
+        <div style="font-size:2.5rem;margin-bottom:.75rem">🔦</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--dark);margin-bottom:.6rem">Find Your Perfect Design</h3>
+        <p style="color:var(--text-mid);margin-bottom:1.5rem">Answer 2 quick questions — we'll match you with the ideal laser cutting design.</p>
+        <button class="btn btn-wood" onclick="qStart()">Take the Quiz ✨</button>
+      </div>
+      <div id="q-steps" style="display:none">
+        <div class="quiz-step on" id="q1">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.25rem">Who is the gift for?</h3>
+          <p style="color:var(--text-mid);font-size:.88rem;margin-bottom:.5rem">Step 1 of 2</p>
+          <div class="quiz-options">
+            <button class="qopt" onclick="qPick1('gift')">👩 Mom</button>
+            <button class="qopt" onclick="qPick1('grandma')">👵 Grandma</button>
+            <button class="qopt" onclick="qPick1('newmom')">👶 New Mom</button>
+            <button class="qopt" onclick="qPick1('pets')">🐾 Pet Mom</button>
+          </div>
+        </div>
+        <div class="quiz-step" id="q2">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.25rem">What kind of gift?</h3>
+          <p style="color:var(--text-mid);font-size:.88rem;margin-bottom:.5rem">Step 2 of 2</p>
+          <div class="quiz-options">
+            <button class="qopt" onclick="qPick2('frame')">🖼 Photo Frame</button>
+            <button class="qopt" onclick="qPick2('box')">📦 Keepsake Box</button>
+            <button class="qopt" onclick="qPick2('keychain')">🔑 Keychain</button>
+            <button class="qopt" onclick="qPick2('decor')">🏡 Wall Décor</button>
+          </div>
+        </div>
+      </div>
+      <div id="q-results" style="display:none">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dark);margin-bottom:.5rem">Perfect Picks for Her ✨</h3>
+        <p style="color:var(--text-mid);margin-bottom:1.5rem">Based on your answers:</p>
+        <div class="grid" id="q-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))"></div>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+          <button class="btn btn-outline btn-sm" onclick="qReset()">Try Again</button>
+          <a href="shop.html" class="btn btn-wood btn-sm">See All Designs ➜</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section style="padding-bottom:4.5rem;position:relative;z-index:2">
+  <div class="wrap">
+    <span class="sec-label rev">Why These Designs?</span>
+    <h2 class="sec-title rev">Three Reasons Makers<br><em>Love These Files</em></h2>
+    <div class="why-grid">
+      <div class="why-card rev del1">
+        <span class="why-icon">⚡</span>
+        <h3 class="why-title">Instant Download</h3>
+        <p class="why-desc">Start cutting in minutes. Download your files immediately — SVG, DXF, AI, CDR and EPS all included. Compatible with every major laser cutter brand.</p>
+      </div>
+      <div class="why-card rev del2">
+        <span class="why-icon">🎯</span>
+        <h3 class="why-title">Cut-Ready Files</h3>
+        <p class="why-desc">Every design is production-tested and ready to send straight to your machine. No cleanup, no node fixing — just open and cut.</p>
+      </div>
+      <div class="why-card rev del3">
+        <span class="why-icon">🏪</span>
+        <h3 class="why-title">Commercial Licence</h3>
+        <p class="why-desc">Sell what you make. All files include a commercial licence — create unlimited physical products and sell them in your shop or at markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT GUIDE TEASERS -->
+<section style="padding-bottom:4.5rem;position:relative;z-index:2">
+  <div class="wrap">
+    <span class="sec-label rev">Ideas & Inspiration</span>
+    <h2 class="sec-title rev">Gift Guide</h2>
+    <div class="grid rev" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+      <a href="gift-guide.html" style="background:rgba(253,246,238,.8);border:1px solid rgba(196,149,106,.22);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;color:inherit;transition:var(--tr)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="height:185px;overflow:hidden;background:#F5E6D3"><img src="https://www.creativefabrica.com/wp-content/uploads/2025/04/30/Mothers-Day-Wooden-Card-Bundle-LaserCut-Laser-Cut-120904929-1.jpg" alt="Gift Guide" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:1.5rem;flex:1">
+          <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);font-weight:700;display:block;margin-bottom:.5rem">Gift Guide</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.6rem;line-height:1.4">10 Stunning Laser Cut Gifts You Can Make for Mother's Day</h3>
+          <p style="font-size:.84rem;color:var(--text-mid);line-height:1.65">From keepsake boxes to engraved frames — the most-loved laser cut gifts and how to make them.</p>
+        </div>
+      </a>
+      <a href="shop.html?cat=frame" style="background:rgba(253,246,238,.8);border:1px solid rgba(196,149,106,.22);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;color:inherit;transition:var(--tr)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="height:185px;overflow:hidden;background:#F5E6D3"><img src="https://www.creativefabrica.com/wp-content/uploads/2024/04/28/Mothers-Day-Photo-Frame-Laser-Cut-96578474-1.jpg" alt="Frames" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:1.5rem;flex:1">
+          <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);font-weight:700;display:block;margin-bottom:.5rem">Photo Frames</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.6rem;line-height:1.4">145 Laser Cut Photo Frame Designs</h3>
+          <p style="font-size:.84rem;color:var(--text-mid);line-height:1.65">The most personal gift — her favourite photo in a frame you made yourself.</p>
+        </div>
+      </a>
+      <a href="shop.html?cat=box" style="background:rgba(253,246,238,.8);border:1px solid rgba(196,149,106,.22);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;color:inherit;transition:var(--tr)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="height:185px;overflow:hidden;background:#F5E6D3"><img src="https://www.creativefabrica.com/wp-content/uploads/2024/04/28/Mothers-Day-Gift-Box-Laser-Cut-96578536-1.jpg" alt="Gift Boxes" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:1.5rem;flex:1">
+          <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);font-weight:700;display:block;margin-bottom:.5rem">Keepsake Boxes</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.6rem;line-height:1.4">93 Gift Box & Keepsake Box Designs</h3>
+          <p style="font-size:.84rem;color:var(--text-mid);line-height:1.65">Fill it with small gifts or let the box be the gift — beautifully engraved wood boxes she'll keep forever.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-sec" id="about">
+  <div class="wrap">
+    <span class="sec-label rev" style="display:block;text-align:center">Our Story</span>
+    <h2 class="sec-title rev" style="text-align:center">Made with Light,<br><em>Given with Love</em></h2>
+    <p class="about-text rev">We curate the finest Mother's Day laser cutting designs — tested, production-ready files that help you create extraordinary handmade gifts. Whether you're a hobbyist with a home laser or a professional running a craft business, every design in our collection is ready to cut from the moment you download it. Wood, acrylic, leather, cardstock — the same file works on every material and every machine.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="cta-banner rev">
+      <h2>Ready to Create Something Beautiful?</h2>
+      <p>Browse all 1938 Mother's Day laser cutting designs. Every file is instant download with a commercial licence — start cutting today.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1">
+        <a href="shop.html" class="btn btn-gold">Browse All 1938 Designs ➜</a>
+        <a href="gift-guide.html" class="btn btn-outline-light">Gift Guide 🎁</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo">Laser Mom Gifts</span>
+      <span class="footer-logo-sub">Mother's Day Laser Cutting Designs</span>
+      <p class="footer-tag">1938 premium laser cutting files for Mother's Day. Cut-ready SVG, DXF, AI, CDR. Instant download, commercial licence.</p>
+      <p style="font-size:.72rem;color:rgba(253,246,238,.25);line-height:1.6">Affiliate disclosure: all product links lead to a partner marketplace. We may earn a small commission at no extra cost to you.</p>
+    </div>
+    <div>
+      <h4 class="footer-h">Categories</h4>
+      <ul class="footer-ul">
+        <li><a href="shop.html">All 1938 Designs</a></li>
+        <li><a href="shop.html?cat=floral">Floral</a></li>
+        <li><a href="shop.html?cat=frame">Photo Frames</a></li>
+        <li><a href="shop.html?cat=box">Gift Boxes</a></li>
+        <li><a href="shop.html?cat=decor">Wall Décor</a></li>
+        <li><a href="shop.html?cat=keychain">Keychains</a></li>
+        <li><a href="shop.html?cat=coaster">Coasters</a></li>
+        <li><a href="shop.html?cat=grandma">For Grandmas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-h">Inspire</h4>
+      <ul class="footer-ul">
+        <li><a href="gift-guide.html">Gift Guide</a></li>
+        <li><a href="gift-guide.html#frames">Photo Frames</a></li>
+        <li><a href="gift-guide.html#boxes">Keepsake Boxes</a></li>
+        <li><a href="gift-guide.html#keychains">Keychains</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-h">File Formats</h4>
+      <ul class="footer-ul">
+        <li><a href="#">SVG — Universal</a></li>
+        <li><a href="#">DXF — CNC / Laser</a></li>
+        <li><a href="#">AI — Adobe Illustrator</a></li>
+        <li><a href="#">CDR — CorelDRAW</a></li>
+        <li><a href="#">EPS — Vector</a></li>
+        <li><a href="#" style="color:var(--gold);margin-top:.5rem;display:block">Commercial Licence ✓</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Laser Mom Gifts. All rights reserved.</span>
+    <span>1938 designs · SVG · DXF · AI · CDR · Commercial licence</span>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="shared.js"></script>
+<script>
+/* CAROUSEL — random 16 products */
+(function(){
+  const el = document.getElementById('carousel');
+  if(!el || typeof PRODUCTS==='undefined') return;
+  const picks = [...PRODUCTS].sort(()=>Math.random()-.5).slice(0,16);
+  el.innerHTML = picks.map(p=>cardHTML(p,'Bestseller')).join('');
+})();
+
+function scrollC(dir){
+  const c = document.getElementById('carousel');
+  if(c) c.scrollBy({left:dir*295, behavior:'smooth'});
+}
+
+/* QUIZ */
+let q1cat=null;
+function qStart(){
+  document.getElementById('q-intro').style.display='none';
+  document.getElementById('q-steps').style.display='block';
+}
+function qPick1(cat){
+  q1cat=cat;
+  event.target.classList.add('sel');
+  setTimeout(()=>{
+    document.getElementById('q1').classList.remove('on');
+    document.getElementById('q2').classList.add('on');
+  },400);
+}
+function qPick2(cat2){
+  event.target.classList.add('sel');
+  setTimeout(()=>{
+    document.getElementById('q-steps').style.display='none';
+    document.getElementById('q-results').style.display='block';
+    let pool = PRODUCTS.filter(p=>p.c===cat2);
+    if(pool.length < 4) pool = PRODUCTS.filter(p=>p.c===q1cat);
+    if(pool.length < 4) pool = PRODUCTS;
+    const picks = [...pool].sort(()=>Math.random()-.5).slice(0,4);
+    document.getElementById('q-grid').innerHTML = picks.map(p=>cardHTML(p,'')).join('');
+    wlRefreshUI();
+  },400);
+}
+function qReset(){
+  q1cat=null;
+  document.getElementById('q-results').style.display='none';
+  document.getElementById('q-intro').style.display='block';
+  document.querySelectorAll('.qopt').forEach(b=>b.classList.remove('sel'));
+  document.getElementById('q1').classList.add('on');
+  document.getElementById('q2').classList.remove('on');
+  document.getElementById('q-steps').style.display='none';
+}
+</script>
+</body>
+</html>

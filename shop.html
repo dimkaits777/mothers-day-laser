@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop All Laser Cutting Designs — Laser Mom Gifts</title>
+<meta name="description" content="Shop all 1938 Mother's Day laser cutting designs. Filter by frames, boxes, floral, keychains, wall décor and more. SVG, DXF, AI, CDR. Instant download.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+  <div class="modal-box">
+    <button class="m-close" onclick="closeSearch()">✕</button>
+    <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:1rem">Search designs…</p>
+    <input class="modal-search" id="search-input" type="text" placeholder="e.g. Rose frame, Nana box, Heart keychain…" autocomplete="off">
+    <div id="search-results" class="modal-results"></div>
+  </div>
+</div>
+
+<!-- WISHLIST DRAWER -->
+<div class="drawer-overlay" id="drawer-ov"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>My Wishlist 🤍</h3>
+    <button class="drawer-close" onclick="toggleDrawer()">✕</button>
+  </div>
+  <div class="drawer-items" id="drawer-items">
+    <div class="d-empty" id="drawer-empty">
+      <div style="font-size:2.5rem;margin-bottom:.75rem">🪵</div>
+      <p>Your wishlist is empty.<br>Heart any design to save it.</p>
+    </div>
+  </div>
+  <div class="drawer-foot" id="drawer-foot" style="display:none">
+    <p style="font-size:.82rem;color:var(--text-mid);margin-bottom:1rem">Ready to create? Download instantly and start cutting.</p>
+    <a href="https://www.creativefabrica.com/search/ref/20531415/?query=mother&type=Laser+Cutting" target="_blank" rel="noopener" class="btn btn-wood" style="display:block;text-align:center">Browse All Designs ➜</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Laser Mom Gifts<span>Mother's Day Laser Designs</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html" class="active">Shop All 1938</a></li>
+    <li><a href="shop.html?cat=floral">Floral</a></li>
+    <li><a href="shop.html?cat=frame">Frames</a></li>
+    <li><a href="shop.html?cat=box">Gift Boxes</a></li>
+    <li><a href="gift-guide.html">Gift Guide</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn" onclick="openSearch()">🔍</button>
+    <button class="nav-btn" onclick="toggleDrawer()">
+      🤍<span class="badge" id="wl-badge">0</span>
+    </button>
+    <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="toggleMobile()">🏠 Home</a>
+  <a href="shop.html" onclick="toggleMobile()">🛒 All 1938 Designs</a>
+  <a href="shop.html?cat=floral" onclick="toggleMobile()">🌸 Floral</a>
+  <a href="shop.html?cat=frame" onclick="toggleMobile()">🖼 Photo Frames</a>
+  <a href="shop.html?cat=box" onclick="toggleMobile()">📦 Gift Boxes</a>
+  <a href="shop.html?cat=decor" onclick="toggleMobile()">🏡 Wall Décor</a>
+  <a href="shop.html?cat=keychain" onclick="toggleMobile()">🔑 Keychains</a>
+  <a href="shop.html?cat=grandma" onclick="toggleMobile()">💛 Grandmas</a>
+  <a href="gift-guide.html" onclick="toggleMobile()">🎁 Gift Guide</a>
+</div>
+
+<!-- SHOP HERO -->
+<div class="shop-hero">
+  <div class="shop-hero-inner">
+    <p style="font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.65rem">Laser Cutting Files</p>
+    <h1>Mother's Day Collection</h1>
+    <p style="color:rgba(255,255,255,.75);font-size:.95rem;margin-top:.75rem;line-height:1.75">1938 designs · SVG · DXF · AI · CDR · Instant download · Commercial licence</p>
+    <div class="materials" style="justify-content:center;margin-top:1.25rem">
+      <span class="mat-badge mat-wood">🪵 Wood</span>
+      <span class="mat-badge mat-acrylic">💎 Acrylic</span>
+      <span class="mat-badge mat-leather">🤎 Leather</span>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE CATEGORY FILTERS -->
+<div style="padding:.75rem 1.5rem;background:rgba(253,246,238,.9);border-bottom:1px solid rgba(196,149,106,.18);position:relative;z-index:2;overflow-x:auto;white-space:nowrap">
+  <div style="display:inline-flex;gap:.5rem" id="mob-filters"></div>
+</div>
+
+<!-- SHOP LAYOUT -->
+<div class="wrap" style="position:relative;z-index:2">
+  <div class="shop-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="side-panel">
+        <div class="side-title">Category</div>
+        <div id="sidebar-cats"></div>
+      </div>
+      <div class="side-panel">
+        <div class="side-title">File Formats</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+          <span class="tag">SVG</span>
+          <span class="tag">DXF</span>
+          <span class="tag">AI</span>
+          <span class="tag">CDR</span>
+          <span class="tag">EPS</span>
+        </div>
+        <p style="font-size:.73rem;color:var(--text-light);margin-top:.8rem;line-height:1.55">Works with Glowforge, xTool, Sculpfun, Atomstack, Ortur, CO₂ and diode lasers.</p>
+      </div>
+      <div class="side-panel">
+        <div class="side-title">Licence</div>
+        <p style="font-size:.83rem;color:var(--text-mid);line-height:1.65">✅ Commercial licence included. Create and sell physical products at markets, Etsy, and your own shop.</p>
+      </div>
+      <div class="side-panel" style="background:linear-gradient(135deg,rgba(183,110,60,.12),rgba(44,95,45,.08));border-color:rgba(183,110,60,.25)">
+        <div class="side-title" style="color:var(--green)">Quick Links</div>
+        <a href="gift-guide.html" style="display:block;font-size:.84rem;color:var(--terra);font-weight:600;margin-bottom:.5rem">🎁 Gift Guide →</a>
+        <a href="shop.html?cat=frame" style="display:block;font-size:.84rem;color:var(--text-mid);margin-bottom:.4rem">🖼 Photo Frames</a>
+        <a href="shop.html?cat=box" style="display:block;font-size:.84rem;color:var(--text-mid)">📦 Keepsake Boxes</a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="shop-main">
+      <div class="toolbar">
+        <div class="result-info" id="result-info">Loading…</div>
+        <input class="search-input" id="inline-search" type="text" placeholder="Search 1938 designs…" autocomplete="off">
+      </div>
+      <div class="grid" id="products-grid"></div>
+      <div id="no-results" style="display:none;text-align:center;padding:4rem 2rem;color:var(--text-mid)">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🔦</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--dark);margin-bottom:.75rem">No designs found</h3>
+        <p>Try a different keyword or category.</p>
+        <button onclick="setFilter('all','')" class="btn btn-outline btn-sm" style="margin-top:1rem">Show All Designs</button>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-banner" style="margin:1rem 0 3rem">
+    <h2>Thousands More Designs Available</h2>
+    <p>Browse the complete Mother's Day laser cutting collection — new designs added every week.</p>
+    <a href="https://www.creativefabrica.com/search/ref/20531415/?query=mother&type=Laser+Cutting" target="_blank" rel="noopener" class="btn btn-gold" style="position:relative;z-index:1">Browse Full Collection ➜</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo">Laser Mom Gifts</span>
+      <span class="footer-logo-sub">Mother's Day Laser Cutting Designs</span>
+      <p class="footer-tag">1938 premium laser cutting files. SVG, DXF, AI, CDR. Instant download, commercial licence.</p>
+      <p style="font-size:.72rem;color:rgba(253,246,238,.25)">Affiliate disclosure: links lead to a partner marketplace.</p>
+    </div>
+    <div>
+      <h4 class="footer-h">Categories</h4>
+      <ul class="footer-ul">
+        <li><a href="shop.html">All Designs</a></li>
+        <li><a href="shop.html?cat=floral">Floral</a></li>
+        <li><a href="shop.html?cat=frame">Frames</a></li>
+        <li><a href="shop.html?cat=box">Gift Boxes</a></li>
+        <li><a href="shop.html?cat=decor">Wall Décor</a></li>
+        <li><a href="shop.html?cat=keychain">Keychains</a></li>
+        <li><a href="shop.html?cat=coaster">Coasters</a></li>
+        <li><a href="shop.html?cat=grandma">Grandmas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-h">Navigate</h4>
+      <ul class="footer-ul">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gift-guide.html">Gift Guide</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-h">Formats</h4>
+      <ul class="footer-ul">
+        <li><a href="#">SVG</a></li>
+        <li><a href="#">DXF</a></li>
+        <li><a href="#">AI</a></li>
+        <li><a href="#">CDR</a></li>
+        <li><a href="#">EPS</a></li>
+        <li><a href="#" style="color:var(--gold);margin-top:.35rem;display:block">Commercial Licence ✓</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Laser Mom Gifts</span>
+    <span>1938 designs · SVG · DXF · AI · CDR</span>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="shared.js"></script>
+<script>
+const PAGE_SIZE = 24;
+const CATS = [
+  {id:'all',     label:'All Designs',        icon:'✨'},
+  {id:'floral',  label:'Floral',             icon:'🌸'},
+  {id:'frame',   label:'Photo Frames',       icon:'🖼'},
+  {id:'box',     label:'Gift Boxes',         icon:'📦'},
+  {id:'decor',   label:'Wall Décor & Signs', icon:'🏡'},
+  {id:'keychain',label:'Keychains & Tags',   icon:'🔑'},
+  {id:'coaster', label:'Coasters & Trays',   icon:'☕'},
+  {id:'grandma', label:'For Grandmas',       icon:'💛'},
+  {id:'funny',   label:'Funny & Relatable',  icon:'😄'},
+  {id:'newmom',  label:'New Moms',           icon:'🍼'},
+  {id:'pets',    label:'Pet Moms',           icon:'🐾'},
+  {id:'gift',    label:'Gift Bundles',       icon:'🎁'},
+];
+
+let currentCat = 'all', currentPage = 1, currentSearch = '', filteredProducts = [];
+
+function readParams(){
+  const p = new URLSearchParams(window.location.search);
+  currentCat = p.get('cat') || 'all';
+  currentPage = parseInt(p.get('page') || '1');
+  currentSearch = p.get('q') || '';
+  const si = document.getElementById('inline-search');
+  if(si && currentSearch) si.value = currentSearch;
+}
+
+function filterProducts(){
+  filteredProducts = PRODUCTS.filter(p => {
+    const catOk = currentCat === 'all' || p.c === currentCat;
+    const qOk   = !currentSearch || p.t.toLowerCase().includes(currentSearch.toLowerCase());
+    return catOk && qOk;
+  });
+}
+
+function renderPage(){
+  const grid = document.getElementById('products-grid');
+  const noRes = document.getElementById('no-results');
+  const info = document.getElementById('result-info');
+  if(!filteredProducts.length){
+    grid.innerHTML=''; noRes.style.display='block'; info.textContent='No designs found';
+    document.getElementById('pagination').innerHTML=''; return;
+  }
+  noRes.style.display='none';
+  const total = filteredProducts.length;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  if(currentPage > totalPages) currentPage = 1;
+  const start = (currentPage-1)*PAGE_SIZE;
+  const slice = filteredProducts.slice(start, start+PAGE_SIZE);
+  const catLabel = CATS.find(c=>c.id===currentCat)?.label || '';
+  info.textContent = `${total.toLocaleString()} design${total!==1?'s':''} ${currentCat!=='all'?'· '+catLabel:''} ${currentSearch?'· "'+currentSearch+'"':''} — Page ${currentPage} of ${totalPages}`;
+  grid.innerHTML = slice.map(p=>cardHTML(p,'')).join('');
+  wlRefreshUI();
+  renderPagination(totalPages);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderPagination(total){
+  const el = document.getElementById('pagination');
+  if(total <= 1){ el.innerHTML=''; return; }
+  const p = currentPage;
+  let pages = [];
+  if(total <= 7){ for(let i=1;i<=total;i++) pages.push(i); }
+  else{
+    pages = [1];
+    if(p > 3) pages.push('…');
+    for(let i=Math.max(2,p-1);i<=Math.min(total-1,p+1);i++) pages.push(i);
+    if(p < total-2) pages.push('…');
+    pages.push(total);
+  }
+  let html = `<button class="page-btn" onclick="goPage(${p-1})" ${p===1?'disabled':''}>←</button>`;
+  pages.forEach(pg=>{
+    if(pg==='…') html+=`<span class="page-dots">…</span>`;
+    else html+=`<button class="page-btn ${pg===p?'active':''}" onclick="goPage(${pg})">${pg}</button>`;
+  });
+  html += `<button class="page-btn" onclick="goPage(${p+1})" ${p===total?'disabled':''}>→</button>`;
+  el.innerHTML = html;
+}
+
+function goPage(n){ currentPage=n; renderPage(); updateURL(); }
+
+function setFilter(cat, search=''){
+  currentCat=cat; currentSearch=search; currentPage=1;
+  const si = document.getElementById('inline-search');
+  if(si) si.value=search;
+  filterProducts(); renderPage(); updateURL(); buildSidebar(); buildMobileFilters();
+}
+
+function updateURL(){
+  const url = new URL(window.location);
+  if(currentCat==='all') url.searchParams.delete('cat'); else url.searchParams.set('cat',currentCat);
+  if(currentPage===1) url.searchParams.delete('page'); else url.searchParams.set('page',currentPage);
+  if(currentSearch) url.searchParams.set('q',currentSearch); else url.searchParams.delete('q');
+  window.history.replaceState({},'',url);
+}
+
+function countCat(cat){ return cat==='all' ? PRODUCTS.length : PRODUCTS.filter(p=>p.c===cat).length; }
+
+function buildSidebar(){
+  const el = document.getElementById('sidebar-cats');
+  if(!el) return;
+  el.innerHTML = CATS.map(c=>`
+    <button class="side-opt ${c.id===currentCat?'active':''}" onclick="setFilter('${c.id}')">
+      ${c.icon} ${c.label}
+      <span class="cnt">${countCat(c.id).toLocaleString()}</span>
+    </button>`).join('');
+}
+
+function buildMobileFilters(){
+  const el = document.getElementById('mob-filters');
+  if(!el) return;
+  el.innerHTML = CATS.map(c=>`
+    <button onclick="setFilter('${c.id}')" style="flex-shrink:0;padding:.45rem 1rem;border-radius:50px;border:1px solid rgba(196,149,106,.3);background:${c.id===currentCat?'var(--terra)':'rgba(253,246,238,.9)'};color:${c.id===currentCat?'#fff':'var(--text-mid)'};font-size:.78rem;font-weight:600;font-family:Outfit,sans-serif;white-space:nowrap;cursor:pointer;transition:all .2s">
+      ${c.icon} ${c.label}
+    </button>`).join('');
+}
+
+let searchTimer;
+document.addEventListener('DOMContentLoaded',()=>{
+  readParams(); buildSidebar(); buildMobileFilters(); filterProducts(); renderPage();
+  const si = document.getElementById('inline-search');
+  if(si) si.addEventListener('input', e=>{
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(()=>{
+      currentSearch = e.target.value.trim(); currentPage = 1;
+      filterProducts(); renderPage(); updateURL();
+    }, 300);
+  });
+});
+</script>
+</body>
+</html>
