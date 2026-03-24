@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Mother's Day Designs | Laser Cut, Embroidery & Graphics</title>
+  <meta name="description" content="Browse 1938 premium digital designs for Mother's Day: laser cut files, embroidery patterns, SVG, DXF, AI, CDR. Instant download, commercial license.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">🌸 Mother's Day Graphics</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button class="search-btn" onclick="openSearch()">🔍</button>
+        <button class="wishlist-btn" onclick="toggleDrawer()">🤍<span id="wl-badge" class="badge">0</span></button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container shop-layout">
+      <aside class="sidebar">
+        <div class="side-panel">
+          <div class="side-title">Category</div>
+          <div id="sidebar-cats"></div>
+        </div>
+        <div class="side-panel">
+          <div class="side-title">File Formats</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+            <span class="tag">SVG</span>
+            <span class="tag">DXF</span>
+            <span class="tag">AI</span>
+            <span class="tag">CDR</span>
+            <span class="tag">EPS</span>
+          </div>
+        </div>
+        <div class="side-panel">
+          <div class="side-title">Commercial License</div>
+          <p style="font-size:0.85rem;">All designs include a commercial license. Create and sell physical products.</p>
+        </div>
+      </aside>
+
+      <main class="shop-main">
+        <div class="toolbar">
+          <div class="result-info" id="result-info">Loading…</div>
+          <input class="search-input" id="inline-search" type="text" placeholder="Search designs…" autocomplete="off">
+        </div>
+        <div class="grid" id="products-grid"></div>
+        <div id="no-results" style="display:none;text-align:center;padding:4rem 2rem;">
+          <div style="font-size:2.5rem;">🔦</div>
+          <h3>No designs found</h3>
+          <p>Try a different keyword or category.</p>
+          <button onclick="setFilter('all','')" class="btn btn-outline" style="margin-top:1rem">Show All</button>
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </main>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Mother's Day Graphics</h4>
+          <p>Premium digital designs for makers. Instant download, commercial license.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mother's Day Graphics. As an affiliate, we earn from qualifying purchases.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal, Drawer, Toast -->
+  <div class="modal-overlay" id="search-modal">
+    <div class="modal-box">
+      <button class="m-close" onclick="closeSearch()">✕</button>
+      <p style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:1rem">Search designs…</p>
+      <input class="modal-search" id="search-input" type="text" placeholder="e.g. Rose frame, Nana box…" autocomplete="off">
+      <div id="search-results" class="modal-results"></div>
+    </div>
+  </div>
+
+  <div class="drawer-overlay" id="drawer-ov"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-head">
+      <h3>My Wishlist 🤍</h3>
+      <button class="drawer-close" onclick="toggleDrawer()">✕</button>
+    </div>
+    <div class="drawer-items" id="drawer-items">
+      <div class="d-empty" id="drawer-empty">
+        <div style="font-size:2.5rem;">🌸</div>
+        <p>Your wishlist is empty. Heart any design to save it.</p>
+      </div>
+    </div>
+    <div class="drawer-foot" id="drawer-foot" style="display:none">
+      <a href="https://www.creativefabrica.com/search/ref/20531415/?query=mother&type=Laser+Cutting" target="_blank" rel="noopener" class="btn" style="display:block;text-align:center">Browse All Designs ➜</a>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/shared.js"></script>
+  <script>
+    const PAGE_SIZE = 24;
+    const CATS = [
+      {id:'all', label:'All Designs', icon:'✨'},
+      {id:'floral', label:'Floral', icon:'🌸'},
+      {id:'frame', label:'Photo Frames', icon:'🖼'},
+      {id:'box', label:'Gift Boxes', icon:'📦'},
+      {id:'decor', label:'Wall Décor', icon:'🏡'},
+      {id:'keychain', label:'Keychains', icon:'🔑'},
+      {id:'coaster', label:'Coasters', icon:'☕'},
+      {id:'grandma', label:'For Grandmas', icon:'💛'},
+      {id:'funny', label:'Funny', icon:'😄'},
+      {id:'newmom', label:'New Moms', icon:'🍼'},
+      {id:'pets', label:'Pet Moms', icon:'🐾'},
+      {id:'gift', label:'Gift Bundles', icon:'🎁'},
+    ];
+
+    let currentCat = 'all', currentPage = 1, currentSearch = '', filteredProducts = [];
+
+    function readParams() {
+      const p = new URLSearchParams(window.location.search);
+      currentCat = p.get('cat') || 'all';
+      currentPage = parseInt(p.get('page') || '1');
+      currentSearch = p.get('q') || '';
+      const si = document.getElementById('inline-search');
+      if (si && currentSearch) si.value = currentSearch;
+    }
+
+    function filterProducts() {
+      filteredProducts = PRODUCTS.filter(p => {
+        const catOk = currentCat === 'all' || p.c === currentCat;
+        const qOk = !currentSearch || p.t.toLowerCase().includes(currentSearch.toLowerCase());
+        return catOk && qOk;
+      });
+    }
+
+    function renderPage() {
+      const grid = document.getElementById('products-grid');
+      const noRes = document.getElementById('no-results');
+      const info = document.getElementById('result-info');
+      if (!filteredProducts.length) {
+        grid.innerHTML = ''; noRes.style.display = 'block'; info.textContent = 'No designs found';
+        document.getElementById('pagination').innerHTML = '';
+        return;
+      }
+      noRes.style.display = 'none';
+      const total = filteredProducts.length;
+      const totalPages = Math.ceil(total / PAGE_SIZE);
+      if (currentPage > totalPages) currentPage = 1;
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const slice = filteredProducts.slice(start, start + PAGE_SIZE);
+      const catLabel = CATS.find(c => c.id === currentCat)?.label || '';
+      info.textContent = `${total.toLocaleString()} design${total !== 1 ? 's' : ''} ${currentCat !== 'all' ? '· ' + catLabel : ''} ${currentSearch ? '· "' + currentSearch + '"' : ''} — Page ${currentPage} of ${totalPages}`;
+      grid.innerHTML = slice.map(p => cardHTML(p, '')).join('');
+      wlRefreshUI();
+      renderPagination(totalPages);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderPagination(total) {
+      const el = document.getElementById('pagination');
+      if (total <= 1) { el.innerHTML = ''; return; }
+      const p = currentPage;
+      let pages = [];
+      if (total <= 7) { for (let i = 1; i <= total; i++) pages.push(i); }
+      else {
+        pages = [1];
+        if (p > 3) pages.push('…');
+        for (let i = Math.max(2, p - 1); i <= Math.min(total - 1, p + 1); i++) pages.push(i);
+        if (p < total - 2) pages.push('…');
+        pages.push(total);
+      }
+      let html = `<button class="page-btn" onclick="goPage(${p - 1})" ${p === 1 ? 'disabled' : ''}>←</button>`;
+      pages.forEach(pg => {
+        if (pg === '…') html += `<span class="page-dots">…</span>`;
+        else html += `<button class="page-btn ${pg === p ? 'active' : ''}" onclick="goPage(${pg})">${pg}</button>`;
+      });
+      html += `<button class="page-btn" onclick="goPage(${p + 1})" ${p === total ? 'disabled' : ''}>→</button>`;
+      el.innerHTML = html;
+    }
+
+    function goPage(n) { currentPage = n; renderPage(); updateURL(); }
+
+    function setFilter(cat, search = '') {
+      currentCat = cat; currentSearch = search; currentPage = 1;
+      const si = document.getElementById('inline-search');
+      if (si) si.value = search;
+      filterProducts(); renderPage(); updateURL(); buildSidebar(); buildMobileFilters();
+    }
+
+    function updateURL() {
+      const url = new URL(window.location);
+      if (currentCat === 'all') url.searchParams.delete('cat'); else url.searchParams.set('cat', currentCat);
+      if (currentPage === 1) url.searchParams.delete('page'); else url.searchParams.set('page', currentPage);
+      if (currentSearch) url.searchParams.set('q', currentSearch); else url.searchParams.delete('q');
+      window.history.replaceState({}, '', url);
+    }
+
+    function countCat(cat) { return cat === 'all' ? PRODUCTS.length : PRODUCTS.filter(p => p.c === cat).length; }
+
+    function buildSidebar() {
+      const el = document.getElementById('sidebar-cats');
+      if (!el) return;
+      el.innerHTML = CATS.map(c => `
+        <button class="side-opt ${c.id === currentCat ? 'active' : ''}" onclick="setFilter('${c.id}')">
+          ${c.icon} ${c.label}
+          <span class="cnt">${countCat(c.id).toLocaleString()}</span>
+        </button>
+      `).join('');
+    }
+
+    function buildMobileFilters() {
+      const el = document.getElementById('mob-filters');
+      if (el) {
+        el.innerHTML = CATS.map(c => `
+          <button onclick="setFilter('${c.id}')" style="flex-shrink:0;padding:0.45rem 1rem;border-radius:50px;border:1px solid var(--border-light);background:${c.id === currentCat ? 'var(--gold)' : 'white'};color:${c.id === currentCat ? 'white' : 'var(--text-mid)'};font-size:0.78rem;font-weight:600;white-space:nowrap;cursor:pointer;">
+            ${c.icon} ${c.label}
+          </button>
+        `).join('');
+      }
+    }
+
+    let searchTimer;
+    document.addEventListener('DOMContentLoaded', () => {
+      readParams(); buildSidebar(); filterProducts(); renderPage();
+      const si = document.getElementById('inline-search');
+      if (si) si.addEventListener('input', e => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => {
+          currentSearch = e.target.value.trim(); currentPage = 1;
+          filterProducts(); renderPage(); updateURL();
+        }, 300);
+      });
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>

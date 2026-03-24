@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mother's Day Graphics | Digital Designs for Embroidery & Laser Cutting</title>
+  <meta name="description" content="Discover premium digital designs for Mother's Day: laser cut files, embroidery patterns, and graphics. Instant download, commercial license.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Pinterest Tag placeholder -->
+  <script>
+    // !!! REPLACE WITH YOUR PINTEREST TAG ID !!!
+    // !pintrk('load', 'YOUR_PINTEREST_TAG_ID');
+    // !pintrk('page');
+  </script>
+  <!-- Google Analytics placeholder -->
+  <script>
+    // !!! REPLACE WITH YOUR GA4 MEASUREMENT ID !!!
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">🌸 Mother's Day Graphics</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button class="search-btn" onclick="openSearch()">🔍</button>
+        <button class="wishlist-btn" onclick="toggleDrawer()">🤍<span id="wl-badge" class="badge">0</span></button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Handmade Gifts Start Here</h1>
+        <p>Premium laser cut files, embroidery patterns, and graphics for Mother's Day. Instant download, commercial license.</p>
+        <a href="shop.html" class="btn">Shop All Designs →</a>
+      </div>
+    </section>
+
+    <!-- Category Cards -->
+    <section class="categories container">
+      <h2 class="section-title">Explore by Category</h2>
+      <div class="cat-grid">
+        <a href="shop.html?cat=laser" class="cat-card">
+          <div class="cat-icon">🔪</div>
+          <h3>Laser Cutting</h3>
+          <p>SVG, DXF, AI files for Glowforge, xTool, and more</p>
+        </a>
+        <a href="shop.html?cat=embroidery" class="cat-card">
+          <div class="cat-icon">🧵</div>
+          <h3>Embroidery</h3>
+          <p>PES, DST, JEF formats for Brother, Janome, etc.</p>
+        </a>
+        <a href="shop.html?cat=graphics" class="cat-card">
+          <div class="cat-icon">🎨</div>
+          <h3>Graphics & Printables</h3>
+          <p>High-resolution PNG, SVG, EPS for card making</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Products (dynamic from products.js) -->
+    <section class="container">
+      <h2 class="section-title">❤️ Bestsellers</h2>
+      <div class="featured-grid" id="featured-grid"></div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="shop.html" class="btn btn-outline">View All 1938 Designs →</a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Makers Say</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial">“Beautiful designs, instant download. My Glowforge loved these files!” — Sarah J.</div>
+          <div class="testimonial">“Perfect for Mother's Day gifts. The commercial license is a huge plus.” — Emily R.</div>
+          <div class="testimonial">“High quality and so many options. My customers adore these.” — Lisa M.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview container">
+      <h2 class="section-title">From Our Blog</h2>
+      <div class="blog-grid">
+        <a href="blog-post1.html" class="blog-card">
+          <img src="https://placehold.co/400x250/F3C1A8/white?text=Embroidery+Tips" alt="Embroidery tips">
+          <div class="blog-card-content">
+            <h3>10 Mother's Day Embroidery Ideas</h3>
+            <p>From personalised towels to cute wall art – get inspired.</p>
+          </div>
+        </a>
+        <a href="blog-post2.html" class="blog-card">
+          <img src="https://placehold.co/400x250/D4E8E0/white?text=Laser+Cutting" alt="Laser cutting">
+          <div class="blog-card-content">
+            <h3>Free Laser Cut Files for Mother's Day</h3>
+            <p>Download our exclusive free designs and start cutting today.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="container">
+      <div class="cta">
+        <h2>Ready to Create Something Special?</h2>
+        <p>Explore thousands of designs and start your next project.</p>
+        <a href="shop.html" class="btn">Shop Now →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Mother's Day Graphics</h4>
+          <p>Premium digital designs for makers. Instant download, commercial license.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Pinterest">📌</a>
+            <a href="#" aria-label="Facebook">📘</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="mailto:hello@mothersdaygraphics.com">hello@mothersdaygraphics.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mother's Day Graphics. All rights reserved. As an affiliate, we earn from qualifying purchases.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals, Drawers (same as in original shop) -->
+  <div class="modal-overlay" id="search-modal">
+    <div class="modal-box">
+      <button class="m-close" onclick="closeSearch()">✕</button>
+      <p style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:1rem">Search designs…</p>
+      <input class="modal-search" id="search-input" type="text" placeholder="e.g. Rose frame, Nana box…" autocomplete="off">
+      <div id="search-results" class="modal-results"></div>
+    </div>
+  </div>
+
+  <div class="drawer-overlay" id="drawer-ov"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-head">
+      <h3>My Wishlist 🤍</h3>
+      <button class="drawer-close" onclick="toggleDrawer()">✕</button>
+    </div>
+    <div class="drawer-items" id="drawer-items">
+      <div class="d-empty" id="drawer-empty">
+        <div style="font-size:2.5rem;margin-bottom:.75rem">🌸</div>
+        <p>Your wishlist is empty. Heart any design to save it.</p>
+      </div>
+    </div>
+    <div class="drawer-foot" id="drawer-foot" style="display:none">
+      <a href="https://www.creativefabrica.com/search/ref/20531415/?query=mother&type=Laser+Cutting" target="_blank" rel="noopener" class="btn" style="display:block;text-align:center">Browse All Designs ➜</a>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Show featured products
+      const featuredGrid = document.getElementById('featured-grid');
+      if (featuredGrid && typeof PRODUCTS !== 'undefined') {
+        const featured = PRODUCTS.slice(0, 6);
+        featuredGrid.innerHTML = featured.map(p => cardHTML(p, '')).join('');
+        wlRefreshUI();
+      }
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
